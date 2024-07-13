@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Players - Dominator 77</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin-top: 70px; /* Add top margin to prevent content from being hidden behind the fixed navbar */
+        }
+        .team-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .contact-info {
+            margin-top: 20px;
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+        .social-icons {
+            margin-top: 10px;
+        }
+        .social-icons a {
+            display: inline-block;
+            margin-right: 10px;
+            color: #333;
+            text-decoration: none;
+        }
+        .social-icons a:hover {
+            color: #0066cc;
+        }
+        .header {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 36px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .header p {
+            font-size: 18px;
+            margin: 5px 0 20px;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .video-container video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+        }
+        @media (max-width: 768px) {
+            .video-container {
+                height: 60vh;
+            }
+            .navbar-toggler-icon {
+                color: #fff; /* Set the color to white */
+            }
+            .navbar {
+                background-color: rgba(52, 58, 64, 0.9); /* Adjust background color and opacity as needed */
+                border-bottom: 1px solid #fff; /* Add bottom border */
+            }
+        }
+        .about-us {
+            padding: 40px 0;
+            text-align: center;
+        }
+        .about-us h2 {
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        .about-us .content-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+        .about-us .content {
+            width: 60%;
+        }
+        .about-us .content p {
+            margin: 20px 0;
+            text-align: justify;
+        }
+        .about-us .image {
+            width: 35%;
+            text-align: center;
+        }
+        .about-us .image img {
+            max-width: 100%;
+            height: auto;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .gallery img {
+            width: 400px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+        .footer .social-icons {
+            margin: 10px 0;
+        }
+        .footer .social-icons a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 10px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        .footer .social-icons a:hover {
+            color: #ffd700;
+        }
+        .navbar {
+            background-color: rgba(52, 58, 64, 0.9); /* Adjust the background color and opacity as needed */
+            width: 100%;
+            z-index: 1000;
+        }
+        .navbar-brand img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .navbar-brand h2 {
+            display: inline;
+            font-size: 24px;
+            color: #fff;
+            margin: 0;
+            vertical-align: middle;
+        }
+        .navbar-nav .nav-link {
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #ffd700;
+        }
+        .larger-link {
+            font-size: 18px; 
+            font-weight: bold; 
+        }
+        /* Ensure all navbar items are visible on mobile */
+        .navbar-expand-lg .navbar-nav .nav-item {
+            display: block !important;
+            text-align: center;
+        }
+        .navbar-expand-lg .navbar-nav .nav-link {
+            display: inline-block !important;
+            width: 100%;
+        } 
+
+
+
+
+
+
+
+              body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .header {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 36px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .header p {
+            font-size: 18px;
+            margin: 5px 0 20px;
+        }
+        .menu {
+            display: flex;
+            justify-content: center;
+            background-color: #007bff;
+            padding: 10px 0;
+        }
+        .menu a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+        .menu a:hover {
+            color: #ffd700;
+        }
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        .players-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .player-card {
+            position: relative;
+            width: 250px;
+            height: 350px;
+            background-color:darkgray;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .player-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+        }
+        .player-card img {
+            width: 100%;
+            height: 60%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .player-card:hover img {
+            transform: scale(1.1);
+        }
+        .player-info {
+            padding: 15px;
+            text-align: center;
+        }
+        .player-info h2 {
+            margin: 10px 0;
+            font-size: 20px;
+            color: #333;
+        }
+        .player-info p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: #666;
+        }
+        .player-info .role {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+        .footer .social-icons {
+            margin: 10px 0;
+        }
+        .footer .social-icons a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 10px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        .footer .social-icons a:hover {
+            color: #ffd700;
+        } 
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="{{ home.about_img.url }}" alt="Logo">
+            <h2>Dominator 77</h2>
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link larger-link" href="{% url 'about' %}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link larger-link" href="{% url 'profile' %}">Players</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link larger-link" href="#">Vlog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link larger-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br><br>
+   
+    <div class="container" >
+        <h3 style="text-align: center;" >The Agun Agun list of Dominator77 Team</h3> 
+        <h5 style="text-align: justify;"> 
+            Dominator 77 is a dynamic cricket team known for its passion, skill, and commitment to the game. Founded with a vision to excel in every format of cricket, our team brings together a blend of seasoned veterans and promising young talents, united by a common love for the sport. Their passion fuels our determination to represent Dominator 77 with pride and distinction.
+        </h5>
+        <br><br>
+        <div class="players-grid">
+            {% for player in captains %}
+            <div class="player-card">
+                <a href="{% url 'player_detail' player.slug %}">
+                <img src="{{ player.image.url }}" alt="{{ player.name }}">
+                <div class="player-info">
+                    <h5>{{ player.name }}</h5>
+                    <p class="role">{{ player.role }}</p>
+                </div> </a>
+            </div>
+            {% endfor %}
+        </div> 
+
+       <br><br>
+
+       <div class="players-grid">
+        {% for player in players %}
+        <div class="player-card">
+            <a href="{% url 'player_detail' player.slug %}">
+                <img src="{{ player.image.url }}" alt="{{ player.name }}">
+                <div class="player-info">
+                    <h3>{{ player.name }}</h3>
+                    <p class="role">{{ player.role }}</p>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+    
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Falcon Squard. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/groups/dominator77/">Facebook</a>
+            {% comment %} <a href="https://twitter.com">Twitter</a> {% endcomment %}
+            <a href="https://www.instagram.com/diu.net.bd?igsh=aWoybWxkcTJpOWZw">Instagram</a>
+            <a href="https://www.linkedin.com/school/dhaka-international-university/">LinkedIn</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

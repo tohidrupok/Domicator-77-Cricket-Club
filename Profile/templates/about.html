@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Players - Dominator 77</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin-top: 70px; /* Add top margin to prevent content from being hidden behind the fixed navbar */
+        }
+        .team-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .contact-info {
+            margin-top: 20px;
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+        .social-icons {
+            margin-top: 10px;
+        }
+        .social-icons a {
+            display: inline-block;
+            margin-right: 10px;
+            color: #333;
+            text-decoration: none;
+        }
+        .social-icons a:hover {
+            color: #0066cc;
+        }
+        .header {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 36px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .header p {
+            font-size: 18px;
+            margin: 5px 0 20px;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .video-container video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+        }
+        @media (max-width: 768px) {
+            .video-container {
+                height: 60vh;
+            }
+            .navbar-toggler-icon {
+                color: #fff; /* Set the color to white */
+            }
+            .navbar {
+                background-color: rgba(52, 58, 64, 0.9); /* Adjust background color and opacity as needed */
+                border-bottom: 1px solid #fff; /* Add bottom border */
+            }
+        }
+        .about-us {
+            padding: 40px 0;
+            text-align: center;
+        }
+        .about-us h2 {
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        .about-us .content-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+        .about-us .content {
+            width: 60%;
+        }
+        .about-us .content p {
+            margin: 20px 0;
+            text-align: justify;
+        }
+        .about-us .image {
+            width: 35%;
+            text-align: center;
+        }
+        .about-us .image img {
+            max-width: 100%;
+            height: auto;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .gallery img {
+            width: 400px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+        .footer .social-icons {
+            margin: 10px 0;
+        }
+        .footer .social-icons a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 10px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        .footer .social-icons a:hover {
+            color: #ffd700;
+        }
+        .navbar {
+            background-color: rgba(52, 58, 64, 0.9); /* Adjust the background color and opacity as needed */
+            width: 100%;
+            z-index: 1000;
+        }
+        .navbar-brand img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .navbar-brand h2 {
+            display: inline;
+            font-size: 24px;
+            color: #fff;
+            margin: 0;
+            vertical-align: middle;
+        }
+        .navbar-nav .nav-link {
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #ffd700;
+        }
+        .larger-link {
+            font-size: 18px; 
+            font-weight: bold; 
+        }
+        /* Ensure all navbar items are visible on mobile */
+        .navbar-expand-lg .navbar-nav .nav-item {
+            display: block !important;
+            text-align: center;
+        }
+        .navbar-expand-lg .navbar-nav .nav-link {
+            display: inline-block !important;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="{{ about.about_img.url }}" alt="Logo">
+            <h2>Dominator 77</h2>
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link larger-link" href="{% url 'about' %}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link larger-link" href="{% url 'profile' %}">Players</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link larger-link" href="#">Vlog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link larger-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="team-container">
+        <h2 style="text-align: center;">Presenting the Dominator 77 Cricket Team</h2>
+        <br><br>
+        <h3>About Us</h3>
+        <p>
+            Dominator 77 is a cricket team from the D-77 batch in the Computer Science and Engineering department at Dhaka International University. Founded in 2024, we have quickly become well-known in our batch. Our team is made up of skilled and passionate players who strive for excellence and good sportsmanship, embodying the strong unity and spirit of our D-77 batch. Together, we aim to bring pride and success to our team and our batch.
+
+        <h3>Our Mission</h3>
+        <p>
+            Our mission is to dominate the cricket field with exceptional performance, fostering a culture of teamwork, integrity, and continuous improvement. We aim to inspire and engage our community through our dedication to the sport and our pursuit of excellence.
+        </p>
+
+        <h3>Meet the Team</h3>
+        <ul>
+            <li><strong>Captain:</strong> Md.Naimur Rahman.</li>
+            <li><strong>Vice-Captain:</strong> Md.Asraful Molla.</li>
+            <li><strong>Batsmen:</strong> Mehadi, Rashed, Robiul, Arafat, Opi, Siam, Rupok, Samir, Zaki, Shouvo, Shaon, Asraful, Rakibul, Jahid, Naimur.</li>
+            <li><strong>Bowlers:</strong> Rupok, Zaki, Naimur, Asraful, Rakibul, Jahid.</li>
+            <li><strong>All-Rounders:</strong> Jahid, Rakibul, Naimur, Asraful, Rakibul, Rupok.</li>
+            <li><strong>Wicketkeepers:</strong> Samir, Asraful.</li>
+        </ul>
+
+        <h3>Achievements</h3>
+        <ul>
+            <li>[2024]: [Coming Soon]</li>
+            <li>[2024]: [Coming Soon]</li>
+            <li>[2024]: [Coming Soon]</li>
+          
+        </ul>
+
+        <h3>Join Us</h3>
+        <p>
+            We are always on the lookout for passionate and talented players to join our ranks. If you share our love for cricket and have the skills to compete at a high level, we would love to hear from you. [Must be CSE dept. Student]
+        </p>
+
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Falcon Squard. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/groups/dominator77/">Facebook</a>
+            {% comment %} <a href="https://twitter.com">Twitter</a> {% endcomment %}
+            <a href="https://www.instagram.com/diu.net.bd?igsh=aWoybWxkcTJpOWZw">Instagram</a>
+            <a href="https://www.linkedin.com/school/dhaka-international-university/">LinkedIn</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

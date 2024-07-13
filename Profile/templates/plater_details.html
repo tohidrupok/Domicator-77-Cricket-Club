@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Players - Dominator 77</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .header {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 36px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .header p {
+            font-size: 18px;
+            margin: 5px 0 20px;
+        }
+        .menu {
+            display: flex;
+            justify-content: center;
+            background-color: #007bff;
+            padding: 10px 0;
+        }
+        .menu a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+        .menu a:hover {
+            color: #ffd700;
+        }
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 40px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .player-detail {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .player-detail:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+        }
+        .player-detail img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .player-detail:hover img {
+            transform: scale(1.1);
+        }
+        .player-info {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .player-info h1 {
+            font-size: 26px;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        .player-content {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            width: 100%;
+        }
+        .left-column, .right-column {
+            flex: 1;
+            padding: 20px;
+        }
+        .left-column p {
+            text-align: justify;
+        }
+        .right-column p {
+            margin: 5px 0;
+        }
+        .right-column .role {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .right-column strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .social-buttons a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 0 10px;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        .social-buttons a i {
+            margin-right: 10px;
+        }
+        .social-buttons a:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+        .footer .social-icons {
+            margin: 10px 0;
+        }
+        .footer .social-icons a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 10px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        .footer .social-icons a:hover {
+            color: #ffd700;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Dominator 77</h1>
+        <p>Batch Name: D77</p>
+    </div>
+    <div class="menu">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'about' %}">About</a>
+        <a href="{% url 'profile' %}">Players</a>
+        <a href="#">Vlog</a>
+        <a href="#">Contact</a>
+    </div>
+    <div class="container">
+        <div class="player-detail">
+            <img src="{{ player.image.url }}" alt="{{ player.name }}">
+            <div class="player-info">
+                <h1>{{ player.name }}</h1>
+            </div>
+            <div class="player-content">
+                <div class="left-column">
+                    <h2>Description</h2>
+                    <p>{{ player.description }}</p>
+                </div>
+                <div class="right-column">
+                    <p><b>Date of Birth:</b> {{ player.date_of_birth }}</p>
+                    <p><b>Role:</b> {{ player.role }}</p>
+                    <p><b>Age:</b> {{ player.age }}</p>
+                    <p><b>Place of Birth:</b> {{ player.place_of_birth }}</p>
+                    <p><b>Nickname:</b> {{ player.nickname }}</p>
+                    <p><b>Jersey Name:</b> {{ player.jersey_name }}</p>
+                    <p><b>Jersey Number:</b> {{ player.jersey_number }}</p>
+                    <p><b>Height:</b> {{ player.height_cm }} cm</p>
+                    <p><b>Batting Style:</b> {{ player.batting_style }}</p>
+                    <p><b>Bowling Style:</b> {{ player.bowling_style }}</p>
+                    <p><b>Relationship Status:</b> {{ player.relationship_status }}</p>
+                </div>
+            </div>
+            <div class="social-buttons">
+                <a href="{{ player.facebook }}" target="_blank">
+                    <i class="fab fa-facebook-f"></i> Facebook
+                </a>
+                <a href="{{ player.linkedin }}" target="_blank">
+                    <i class="fab fa-linkedin-in"></i> LinkedIn
+                </a>
+                <a href="{{ player.email }}">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Dominator 77. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+</body>
+</html>
