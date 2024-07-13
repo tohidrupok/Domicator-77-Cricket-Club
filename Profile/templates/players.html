@@ -4,163 +4,145 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cricket Players - Dominator 77</title>
-    <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f0f0f0;
-            padding: 20px;
-            margin-top: 70px; /* Add top margin to prevent content from being hidden behind the fixed navbar */
+        /* Define color variables */
+        :root {
+            --color-one: #990033;
+            --color-two:#A9A9A9;
+            --color-negro: #D3D3D3;
+            --color-blanco: #000000;
+            --color-sombra: #E74C3C;
         }
-        .team-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            color: #333;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin-bottom: 5px;
-        }
-        .contact-info {
-            margin-top: 20px;
-        }
-        .contact-info p {
-            margin: 5px 0;
-        }
-        .social-icons {
-            margin-top: 10px;
-        }
-        .social-icons a {
-            display: inline-block;
-            margin-right: 10px;
-            color: #333;
-            text-decoration: none;
-        }
-        .social-icons a:hover {
-            color: #0066cc;
-        }
-        .header {
-            background-color: #343a40;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
-        .header h1 {
+
+        /* Global styles */
+        * {
             margin: 0;
-            font-size: 36px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+            outline: none;
+            color: var(--color-blanco);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-        .header p {
-            font-size: 18px;
-            margin: 5px 0 20px;
+
+        body {
+            font-family: "Montserrat", sans-serif;
+            
+            overflow-y: auto; 
+            padding-top: 56px; 
         }
-        .video-container {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-        }
-        .video-container video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transform: translate(-50%, -50%);
-        }
-        @media (max-width: 768px) {
-            .video-container {
-                height: 60vh;
-            }
-            .navbar-toggler-icon {
-                color: #fff; /* Set the color to white */
-            }
-            .navbar {
-                background-color: rgba(52, 58, 64, 0.9); /* Adjust background color and opacity as needed */
-                border-bottom: 1px solid #fff; /* Add bottom border */
-            }
-        }
-        .about-us {
-            padding: 40px 0;
-            text-align: center;
-        }
-        .about-us h2 {
-            margin-bottom: 20px;
-            font-size: 28px;
-        }
-        .about-us .content-container {
-            display: flex;
-            justify-content: space-between;
-            margin: 20px;
-        }
-        .about-us .content {
-            width: 60%;
-        }
-        .about-us .content p {
-            margin: 20px 0;
-            text-align: justify;
-        }
-        .about-us .image {
-            width: 35%;
-            text-align: center;
-        }
-        .about-us .image img {
-            max-width: 100%;
-            height: auto;
-        }
-        .gallery {
+
+        .container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
+            padding: 2em;
         }
-        .gallery img {
-            width: 400px;
-            height: 300px;
+
+        .card {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            margin: 1em;
+            background: var(--color-two);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,.2);
+            backdrop-filter: blur(40px);
+            border: 2px solid transparent;
+            transition: transform 0.5s, opacity 0.5s;
+        }
+
+        .card:hover .content {
+            opacity: 1;
+            transform: translateY(-20px);
+        }
+
+        .card:hover .sci li {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.5;
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        .img {
+            width: 290px;
+            height: 290px;
+            border-radius: 80%;
+            overflow: hidden;
+            border: 10px solid rgba(0, 0, 0, 0.25);
+        }
+
+        .img img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            border-radius: 10px;
         }
-        .footer {
-            background-color: #343a40;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
-        .footer p {
-            margin: 0;
-            font-size: 14px;
-        }
-        .footer .social-icons {
-            margin: 10px 0;
-        }
-        .footer .social-icons a {
-            text-decoration: none;
-            color: #fff;
-            margin: 0 10px;
+
+        .cardContent h3 {
+            color: #000000;
+            letter-spacing: 2px;
+            font-weight: 500;
             font-size: 18px;
-            transition: color 0.3s;
+            text-align: center;
+            margin: 20px 0 10px;
+            line-height: 1.1em;
         }
-        .footer .social-icons a:hover {
-            color: #ffd700;
+
+        .cardContent h3 span {
+            font-size: 12px;
+            font-weight: 300;
+            text-transform: initial;
         }
+
+        .sci {
+            position: absolute;
+            bottom: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sci li {
+            margin: 0 10px;
+            transform: translateY(40px);
+            opacity: 0;
+            transition: transform 0.5s, opacity 0.5s;
+        }
+
+        .sci a {
+            font-size: 30px;
+            color: var(--color-blanco);
+            
+        } 
+        .sci a i {
+            color: #fff; 
+        }
+
         .navbar {
-            background-color: rgba(52, 58, 64, 0.9); /* Adjust the background color and opacity as needed */
+            position: absolute;
             width: 100%;
             z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+        .navbar.fixed-top {
+            position: fixed;
+            top: 0;
+            background-color: rgba(52, 58, 64, 0.9); /* Adjust the background color and opacity as needed */
         }
         .navbar-brand img {
             width: 40px;
@@ -194,111 +176,15 @@
         .navbar-expand-lg .navbar-nav .nav-link {
             display: inline-block !important;
             width: 100%;
-        } 
+        }
 
-
-
-
-
-
-
-              body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
-        }
-        .header {
-            background-color: #343a40;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
-        .header h1 {
-            margin: 0;
-            font-size: 36px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .header p {
-            font-size: 18px;
-            margin: 5px 0 20px;
-        }
-        .menu {
-            display: flex;
-            justify-content: center;
-            background-color: #007bff;
-            padding: 10px 0;
-        }
-        .menu a {
-            text-decoration: none;
-            color: #fff;
-            font-size: 18px;
-            margin: 0 15px;
-            transition: color 0.3s;
-        }
-        .menu a:hover {
-            color: #ffd700;
-        }
-        .container {
-            width: 90%;
-            margin: 0 auto;
-            padding: 40px 0;
-        }
-        .players-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-        }
-        .player-card {
-            position: relative;
-            width: 250px;
-            height: 350px;
-            background-color:darkgray;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .player-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
-        }
-        .player-card img {
-            width: 100%;
-            height: 60%;
-            object-fit: cover;
-            transition: transform 0.3s;
-        }
-        .player-card:hover img {
-            transform: scale(1.1);
-        }
-        .player-info {
-            padding: 15px;
-            text-align: center;
-        }
-        .player-info h2 {
-            margin: 10px 0;
-            font-size: 20px;
-            color: #333;
-        }
-        .player-info p {
-            margin: 5px 0;
-            font-size: 16px;
-            color: #666;
-        }
-        .player-info .role {
-            font-weight: bold;
-            color: #007bff;
-        }
         .footer {
             background-color: #343a40;
             color: #fff;
             padding: 20px 0;
             text-align: center;
         }
+
         .footer p {
             margin: 0;
             font-size: 14px;
@@ -316,8 +202,6 @@
         .footer .social-icons a:hover {
             color: #ffd700;
         } 
-
-
     </style>
 </head>
 <body>
@@ -326,7 +210,6 @@
             <img src="{{ home.about_img.url }}" alt="Logo">
             <h2>Dominator 77</h2>
         </a>
-        
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -336,68 +219,86 @@
                     <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link larger-link" href="{% url 'about' %}">About</a>
+                    <a class="nav-link" href="{% url 'about' %}">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link larger-link" href="{% url 'profile' %}">Players</a>
+                    <a class="nav-link" href="{% url 'profile' %}">Players</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link larger-link" href="#">Vlog</a>
+                    <a class="nav-link" href="#">Vlog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link larger-link" href="#">Contact</a>
+                    <a class="nav-link" href="#">Contact</a>
                 </li>
             </ul>
         </div>
     </nav>
-    <br><br>
-   
-    <div class="container" >
-        <h3 style="text-align: center;" >The Agun Agun list of Dominator77 Team</h3> 
+    <div class="container">
+        <h3 style="text-align: center;">The list of Dominator77 Team</h3> 
         <h5 style="text-align: justify;"> 
             Dominator 77 is a dynamic cricket team known for its passion, skill, and commitment to the game. Founded with a vision to excel in every format of cricket, our team brings together a blend of seasoned veterans and promising young talents, united by a common love for the sport. Their passion fuels our determination to represent Dominator 77 with pride and distinction.
         </h5>
-        <br><br>
-        <div class="players-grid">
+        <div class="container">
             {% for player in captains %}
-            <div class="player-card">
-                <a href="{% url 'player_detail' player.slug %}">
-                <img src="{{ player.image.url }}" alt="{{ player.name }}">
-                <div class="player-info">
-                    <h5>{{ player.name }}</h5>
-                    <p class="role">{{ player.role }}</p>
-                </div> </a>
+            <div class="card">
+                <div class="content">
+                    <div class="img"><img src="{{ player.image.url }}" alt="{{ player.name }}"></div>
+                    <div class="cardContent">
+                        <a href="{% url 'player_detail' player.slug %}">
+                        <h3>{{ player.name }}<br><span>{{ player.role }}</span></h3> </a>
+                        
+                    </div>
+                </div>
+                <ul class="sci">
+                    <li style="--i:1">
+                        <a href="{{ player.facebook }}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    </li>
+                    <li style="--i:3">
+                        <a href="{{ player.linkedin }}"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    </li>
+                    <li style="--i:2">
+                        <a href="{{ player.instagram }}"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    </li>
+
+                </ul>
             </div>
             {% endfor %}
-        </div> 
-
-       <br><br>
-
-       <div class="players-grid">
-        {% for player in players %}
-        <div class="player-card">
-            <a href="{% url 'player_detail' player.slug %}">
-                <img src="{{ player.image.url }}" alt="{{ player.name }}">
-                <div class="player-info">
-                    <h3>{{ player.name }}</h3>
-                    <p class="role">{{ player.role }}</p>
-                </div>
-            </a>
         </div>
-        {% endfor %}
-    </div>
-    
+        <div class="container">
+            {% for player in players %}
+            <div class="card">
+                <div class="content">
+                    <div class="img"><img src="{{ player.image.url }}" alt="{{ player.name }}"></div>
+                    <div class="cardContent">
+                        <a href="{% url 'player_detail' player.slug %}">
+                        <h3>{{ player.name }}<br><span>{{ player.role }}</span></h3> 
+                        </a>
+                    </div>
+                </div>
+                <ul class="sci">
+                    <li style="--i:1">
+                        <a href="{{ player.facebook }}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    </li>
+                    <li style="--i:3">
+                        <a href="{{ player.linkedin }}"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    </li>
+                    <li style="--i:2">
+                        <a href="{{ player.instagram }}"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    </li>
+
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
     </div>
     <div class="footer">
         <p>&copy; 2024 Falcon Squard. All rights reserved.</p>
         <div class="social-icons">
             <a href="https://www.facebook.com/groups/dominator77/">Facebook</a>
-            {% comment %} <a href="https://twitter.com">Twitter</a> {% endcomment %}
             <a href="https://www.instagram.com/diu.net.bd?igsh=aWoybWxkcTJpOWZw">Instagram</a>
             <a href="https://www.linkedin.com/school/dhaka-international-university/">LinkedIn</a>
         </div>
     </div>
-
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>

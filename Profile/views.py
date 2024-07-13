@@ -18,4 +18,8 @@ def player_detail(request, slug):
 
 def about(request):
     about = Home.objects.first()  
-    return render(request, 'about.html', {'about': about})
+    return render(request, 'about.html', {'about': about}) 
+
+def vlog(request):
+    home = Home.objects.first()  
+    return render(request, 'vlog.html', {'home': home}) 
