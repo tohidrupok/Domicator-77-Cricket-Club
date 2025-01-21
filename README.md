@@ -1,4 +1,6 @@
-# D77CricketTeam
+# Domicator-77-Cricket-Club
+Cricket team of CSE D-77 batch of Dhaka International University 
+
 
 This is a web-based cricket team management application built using Django. The application allows users to manage player profiles, team details, and media content effectively.
 
